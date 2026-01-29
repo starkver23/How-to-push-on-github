@@ -1,0 +1,7 @@
+This file explains the process to push into a github repo without any errors
+
+We are using starkver23 account to test This
+
+Check the version of git first. If not updated then upgrade it 
+command: git --version
+
