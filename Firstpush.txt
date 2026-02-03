@@ -5,3 +5,17 @@ We are using starkver23 account to test This
 Check the version of git first. If not updated then upgrade it 
 command: git --version
 
+Check exsisting SSH Keys
+ls ~/.ssh
+
+Initialize Git by: git init
+
+Add files: git add .
+
+Commit: git commit -m "Initial commit"
+
+Add remote: git remote add origin HTTP link
+
+Push the code: 
+git branch -M main
+git push -u origin main
