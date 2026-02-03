@@ -1,23 +1,71 @@
-This file explains the process to push into a github repo without any errors
+==========================================================
+GITHUB WORKFLOW: START TO FINISH (SSH)
+==========================================================
 
-We are using starkver23 account to test This
+PHASE 1: INITIALIZING AND LINKING THE REPOSITORY
+----------------------------------------------------------
+1. Navigate to your project folder:
+   cd /path/to/your/folder
 
-Check the version of git first. If not updated then upgrade it 
-command: git --version
+2. Initialize Git:
+   git init
 
-Check exsisting SSH Keys
-ls ~/.ssh
+3. Add your files:
+   git add .
 
-Initialize Git by: git init
+4. Create your first commit:
+   git commit -m "Initial commit"
 
-Add files: git add .
+5. Link to GitHub (Using SSH):
+   git remote add origin git@ssh-link
 
-Commit: git commit -m "Initial commit"
+6. Sync with remote (if README/License exists on GitHub):
+   git pull origin main --rebase
 
-Add remote: git remote add origin HTTP link
+7. Push to GitHub:
+   git branch -M main
+   git push -u origin main
 
-Push the code: 
-git branch -M main
-git push -u origin main
 
-Create pull request
+PHASE 2: WORKING ON A FEATURE BRANCH (e.g., "force")
+----------------------------------------------------------
+1. Create and switch to the new branch:
+   git checkout -b force
+
+2. Make your code changes in your editor.
+
+3. Stage and commit the changes:
+   git add .
+   git commit -m "Description of changes in force branch"
+
+4. Push the branch to GitHub:
+   git push -u origin force
+
+
+PHASE 3: CREATING A PULL REQUEST (PR)
+----------------------------------------------------------
+1. Go to your repository.
+2. Click the green "Compare & pull request" button (appears automatically).
+3. Ensure: base: main <- compare: force.
+4. Write a title and description for your changes.
+5. Click "Create pull request".
+6. Click "Merge pull request" and "Confirm merge" to move code to main.
+
+
+PHASE 4: SYNCING BACK TO LOCAL MAIN
+----------------------------------------------------------
+Once the PR is merged on the website, update your computer:
+
+1. Switch to main:
+   git checkout main
+
+2. Pull the newly merged changes:
+   git pull origin main
+
+==========================================================
+USEFUL COMMANDS
+==========================================================
+- Check status: git status
+- View branches: git branch
+- Check SSH connection: ssh -T git@github.com
+==========================================================
