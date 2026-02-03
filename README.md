@@ -7,7 +7,7 @@ PHASE 1: INITIAL SETUP & FIRST PUSH
 1. git init                               # Start local repo
 2. git add .                              # Stage all files
 3. git commit -m "Initial commit"         # Save snapshot
-4. git remote add origin git@github.com:starkver23/How-to-push-on-github.git
+4. git remote add origin git@ssh-link
 5. git pull origin main --rebase          # Sync with GitHub's README/License
 6. git push -u origin main                # Upload to main branch
 
@@ -21,7 +21,7 @@ PHASE 2: WORKING ON A FEATURE BRANCH ("force")
 
 PHASE 3: CREATING A PULL REQUEST (PR)
 ----------------------------------------------------------
-1. Go to: https://github.com/starkver23/How-to-push-on-github
+1. Go to your repository
 2. Click "Compare & pull request" (Yellow bar).
 3. Check: [base: main] <- [compare: force].
 4. Click "Create pull request".
