@@ -1,71 +1,34 @@
 ==========================================================
-GITHUB WORKFLOW: START TO FINISH (SSH)
+GIT & GITHUB COMPLETE WORKFLOW (SSH)
 ==========================================================
 
-PHASE 1: INITIALIZING AND LINKING THE REPOSITORY
+PHASE 1: INITIAL SETUP & FIRST PUSH
 ----------------------------------------------------------
-1. Navigate to your project folder:
-   cd /path/to/your/folder
+1. git init                               # Start local repo
+2. git add .                              # Stage all files
+3. git commit -m "Initial commit"         # Save snapshot
+4. git remote add origin git@github.com:starkver23/How-to-push-on-github.git
+5. git pull origin main --rebase          # Sync with GitHub's README/License
+6. git push -u origin main                # Upload to main branch
 
-2. Initialize Git:
-   git init
-
-3. Add your files:
-   git add .
-
-4. Create your first commit:
-   git commit -m "Initial commit"
-
-5. Link to GitHub (Using SSH):
-   git remote add origin git@ssh-link
-
-6. Sync with remote (if README/License exists on GitHub):
-   git pull origin main --rebase
-
-7. Push to GitHub:
-   git branch -M main
-   git push -u origin main
-
-
-PHASE 2: WORKING ON A FEATURE BRANCH (e.g., "force")
+PHASE 2: WORKING ON A FEATURE BRANCH ("force")
 ----------------------------------------------------------
-1. Create and switch to the new branch:
-   git checkout -b force
-
-2. Make your code changes in your editor.
-
-3. Stage and commit the changes:
-   git add .
-   git commit -m "Description of changes in force branch"
-
-4. Push the branch to GitHub:
-   git push -u origin force
-
+1. git checkout -b force                  # Create and switch to 'force'
+2. git add .                              # Stage changes
+3. git commit -m "Your message"           # Save changes
+4. git pull origin force --rebase         # SYNC (Fixes the 'rejected' error)
+5. git push -u origin force               # Upload to 'force' branch
 
 PHASE 3: CREATING A PULL REQUEST (PR)
 ----------------------------------------------------------
-1. Go to your repository.
-2. Click the green "Compare & pull request" button (appears automatically).
-3. Ensure: base: main <- compare: force.
-4. Write a title and description for your changes.
-5. Click "Create pull request".
-6. Click "Merge pull request" and "Confirm merge" to move code to main.
+1. Go to: https://github.com/starkver23/How-to-push-on-github
+2. Click "Compare & pull request" (Yellow bar).
+3. Check: [base: main] <- [compare: force].
+4. Click "Create pull request".
+5. Click "Merge pull request" -> "Confirm merge".
 
-
-PHASE 4: SYNCING BACK TO LOCAL MAIN
+PHASE 4: SYNCING LOCAL MAIN
 ----------------------------------------------------------
-Once the PR is merged on the website, update your computer:
-
-1. Switch to main:
-   git checkout main
-
-2. Pull the newly merged changes:
-   git pull origin main
-
-==========================================================
-USEFUL COMMANDS
-==========================================================
-- Check status: git status
-- View branches: git branch
-- Check SSH connection: ssh -T git@github.com
+1. git checkout main                      # Switch back to main
+2. git pull origin main                   # Pull the merged code from GitHub
 ==========================================================
